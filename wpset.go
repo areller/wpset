@@ -35,7 +35,7 @@ func main() {
 	_, err = dbmap.Select(&wallpapers, "SELECT value, ROWID FROM data ORDER BY ROWID ASC")
 	checkErr(err, "Select failed")
 	log.Println("All Rows:")
-	for _, p := range wallpapers[1:] {
+	for _, p := range wallpapers {
 		// log.Printf("    %d: %v\n", x, p)
 
 		if isValidImage(expandPath(p.Image)) {
